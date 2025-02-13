@@ -41,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
       if (_counter >= 25) {
         _showImage = true;
-        _imageX = MediaQuery.of(context).size.width - 100;
+        _imageX = MediaQuery.of(context).size.width - 150;
         _imageY = 50;
       }
     });
@@ -68,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
             child: _showImage
                 ? Image.asset(
                     "dog.jpg",
-                    width: 100,
+                    width: 150,
                   )
                 : const SizedBox(),
           ),
@@ -77,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 const Text(
-                  'Push the + button to meet the visitor:',
+                  'Push the + button to meet The Visitor:',
                   style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
                 Text(
@@ -88,21 +88,27 @@ class _MyHomePageState extends State<MyHomePage> {
                       ?.copyWith(color: Colors.white),
                 ),
                 const SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const SecondScreen()),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blueAccent,
-                    foregroundColor: Colors.white,
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 12),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 30),
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const SecondScreen()),
+                        );
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blueAccent,
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 20, vertical: 12),
+                      ),
+                      child: const Text('Go to Second Page'),
+                    ),
                   ),
-                  child: const Text('Go to Second Page'),
                 ),
               ],
             ),
@@ -124,13 +130,24 @@ class SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Second Page')),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Go Back'),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("space.jpg"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Center(
+          child: ElevatedButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.blueAccent,
+              foregroundColor: Colors.white,
+            ),
+            child: const Text('Go Back'),
+          ),
         ),
       ),
     );
