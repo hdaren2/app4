@@ -54,27 +54,28 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Find Fred'),
+        title: const Text(''),
       ),
-      // Create the SelectionButton widget in the next step.
       body: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(''),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                ElevatedButton(onPressed: () {
-                _navigateAndDisplaySelection(context);
-                }, child: Text("Start")),
-          ],
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(''),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              ElevatedButton(
+                  onPressed: () {
+                    _navigateAndDisplaySelection(context);
+                  },
+                  child: Text("Start")),
+            ],
+          ),
         ),
       ),
-    ),
     );
   }
 }
@@ -89,35 +90,29 @@ class FirstScreen extends StatelessWidget {
         title: const Text(''),
       ),
       body: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(''),
-                fit: BoxFit.contain,
-              ),
-            ),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(''),
+            fit: BoxFit.contain,
+          ),
+        ),
         child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8),
-              child: ElevatedButton(
-                onPressed: () {
-                  // Pop here with "Yep"...
-                  Navigator.pop(context, 'Go Back');
-                },
-                child: const Text('Go Back'),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(context, 'Go Back');
+                  },
+                  child: const Text('Go Back'),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
-    ),
     );
   }
 }
-
-
-
-
-
