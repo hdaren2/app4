@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -216,14 +214,25 @@ class SecondScreen extends StatelessWidget {
   }
 
   void _showBoxDialog(BuildContext context, int index) {
+    Map<int, String> imageMap = {
+      0: "DemirImage0.jpg",
+      1: "DemirImage1",
+      2: "DemirImage2.jpg",
+      3: "DemirImage3.jpg",
+      4: "junk.jpg",
+      5: "dog2.jpg",
+      6: "DemirImage4.jpg",
+      7: "DemirImage5.jpg",
+    };
+
     showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
           title: Text('Box ${index + 1}'),
-          content: index == 4
-            ? Image.asset("dog2.jpg", width: 150, height: 150)
-            : Text('Nothing here!'),
+          content: imageMap.containsKey(index)
+              ? Image.asset(imageMap[index]!, width: 150, height: 150)
+              : const Text('Nothing here!'),
           actions: [
             TextButton(
               onPressed: () {
