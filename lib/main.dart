@@ -215,14 +215,14 @@ class SecondScreen extends StatelessWidget {
 
   void _showBoxDialog(BuildContext context, int index) {
     Map<int, String> imageMap = {
-      0: "DemirImage0.jpg",
-      1: "DemirImage1",
-      2: "DemirImage2.jpg",
-      3: "DemirImage3.jpg",
+      0: "Car.jpg",
+      1: "Gal.jpg",
+      2: "Plan.jpg",
+      3: "whatisthis.jpg",
       4: "junk.jpg",
       5: "dog2.jpg",
-      6: "DemirImage4.jpg",
-      7: "DemirImage5.jpg",
+      6: "Worm.jpg",
+      7: "4.jpg",
     };
 
     showDialog(
