@@ -46,36 +46,46 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('space.jpg'),
-                fit: BoxFit.cover,
-              ),
-            ), 
-            child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('space.jpg'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
               const Text(
                 'You have pushed the button this many times:',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               Text(
                 '$_counter',
-                style: Theme.of(context).textTheme.headlineMedium,
+                style: TextStyle(
+                color: Colors.white,
+                fontSize: 18, 
+                fontWeight: FontWeight.bold, 
+                ),
               ),
               const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const SecondScreen()),
+                    MaterialPageRoute(
+                        builder: (context) => const SecondScreen()),
                   );
                 },
                 child: const Text('Go to Second Page'),
               ),
-    ],
-  ),
-),
+            ],
+          ),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
